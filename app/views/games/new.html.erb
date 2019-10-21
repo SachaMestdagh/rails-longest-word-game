@@ -1,0 +1,24 @@
+
+<div id="container">
+    <h1>NEW GAME</h1>
+
+    <p> here is your grid: </p>
+
+    <div class="letter-grid">
+      <% @grid.split("").each do |letter| %>
+        <div class="single-letter"><%= letter %></div>
+      <% end %>
+    </div>
+
+
+    <p> What is the longest word you can find? : </p>
+
+    <div id="submit_form">
+      <form action="/score" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :grid_letters, @grid %>
+        <input id="inputform" type="text" name="word" placeholder="your best shot">
+        <input id="btn" type="submit">
+      </form>
+    </div>
+</div>

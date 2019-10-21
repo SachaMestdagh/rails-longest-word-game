@@ -1,0 +1,20 @@
+
+<div id="container">
+
+    <h1>SCORE TIME!</h1>
+
+    <div id="results">
+      <%= @score_hash[:message]%>
+    </div>
+
+    <div id="results_details">
+    You entered <%= @score_hash[:word] %>
+    in <%=@score_hash[:time] %> seconds!
+    your scored <%=@score_hash[:score] %> points!
+    </div>
+
+    <div>
+    <a href="/new">Play again</a>
+    </div>
+
+  </div>
